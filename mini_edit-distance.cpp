@@ -13,6 +13,7 @@ char A[MAX], B[MAX], C[MAX][MAX];
 //求最小改变距离 有3种改变
 //分别为增 删 改 一个字符
 //输入2字符串及对应长度 输出C[i][j]， 其中存的是A的前i个字符变成B前j个字符的最少次数
+//动态规划   
 //《算法引论》6.8序列比较
 void Minimum_Edit_Distance(char A[],int  n,char B[],int  m)
 {
