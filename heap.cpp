@@ -11,9 +11,9 @@
 using namespace std;
 
 int X[MAX], n;
-//¹éÄÉ¼ÙÉèµ±X[i+1, i+2, ... n]Îª¶ÑÊ±£¬Í¨¹ıPush_down²Ù×÷ºóX[i,...,n]ÒàÎª¶Ñ
+//å½’çº³å‡è®¾å½“X[i+1, i+2, ... n]ä¸ºå †æ—¶ï¼Œé€šè¿‡Push_downæ“ä½œåX[i,...,n]äº¦ä¸ºå †
 
-//µ±×ÓÊ÷½ÔÎª¶ÑÊ±£¬Ìí¼Ó¸¸½Úµã£¬¸üĞÂ¶Ñ¡£
+//å½“å­æ ‘çš†ä¸ºå †æ—¶ï¼Œæ·»åŠ çˆ¶èŠ‚ç‚¹ï¼Œæ›´æ–°å †ã€‚
 void Push_down(int X[], int k, int n)
 {
     if (2*k+1>n) return;
@@ -36,14 +36,14 @@ void Push_down(int X[], int k, int n)
         Push_down(X, 2*k+1, n);
     }
 }
-//¶ÔX[]½¨×î´ó¶Ñ£¬·¶Î§1~n£¬O(n)
+//å¯¹X[]å»ºæœ€å¤§å †ï¼ŒèŒƒå›´1~nï¼ŒO(n)
 void Build_heap(int X[], int n)
 {
     for (int i=n/2+1; i>=1; i--)
         Push_down(X, i, n);
 }
 
-//¶ÑÅÅĞò O(nlogn)
+//å †æ’åº O(nlogn)
 void Heap_sort(int X[], int n)
 {
     Build_heap(X, n);
