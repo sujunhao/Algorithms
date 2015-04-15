@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <ctime>
 #include <stack>
@@ -16,7 +17,7 @@ int X[MAX], n;
 //当子树皆为堆时，添加父节点，更新堆。
 void Push_down(int X[], int k, int n)
 {
-    if (2*k+1>n) return;
+    if (2*k>n) return;
     if (2*k==n)
     {
         if (X[k]>=X[2*k]) return;
@@ -39,7 +40,7 @@ void Push_down(int X[], int k, int n)
 //对X[]建最大堆，范围1~n，O(n)
 void Build_heap(int X[], int n)
 {
-    for (int i=n/2+1; i>=1; i--)
+    for (int i=n/2; i>=1; i--)
         Push_down(X, i, n);
 }
 
@@ -57,9 +58,10 @@ void Heap_sort(int X[], int n)
 int main()
 {
     scanf("%d", &n);
+    srand(time(0));
     for(int i=1; i<=n; i++)
     {
-        scanf("%d", &X[i]);
+        X[i]=rand()%100;
     }
     Heap_sort(X, n);
     //Build_heap(X, n);
