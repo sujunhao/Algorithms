@@ -16,7 +16,7 @@ int X[MAX], n;
 
 //当子树皆为堆时，添加父节点，更新堆。
 void Push_down(int X[], int k, int n)
-{
+{       
     if (2*k>n) return;
     if (2*k==n)
     {
