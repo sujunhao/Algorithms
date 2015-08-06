@@ -37,6 +37,8 @@ void Quick_sort(int X[], int l, int r)
     Quick_sort(X, mid+1, r);
 
 }
+
+
 int main()
 {
     scanf("%d", &n);
