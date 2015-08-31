@@ -5,6 +5,7 @@
 
 //数组copy   a -> b
 #include <cstring>
+
 memcpy(b, a, sizeof(a));
 memcpy(b, a, sizeof(int)*k);
 
